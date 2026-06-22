@@ -1,20 +1,31 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-sj-ui';
-
-const result = multiply(3, 7);
+import { ViewCard, TextView, SjUiProvider } from 'react-native-sj-ui';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <SjUiProvider
+      theme={{
+        colors: {
+          primary: 'red',
+        },
+        typography: {
+          fontSize: {
+            h1: 30,
+          },
+        },
+      }}
+    >
+      <ViewCard
+        backgroundColor={'purple'}
+        padding={20}
+        marginTop={200}
+        // style={{ backgroundColor: 'blue' }}
+      >
+        <TextView size="h2">John Doe</TextView>
+
+        <TextView size="body" color="secondary">
+          Mobile Developer
+        </TextView>
+      </ViewCard>
+    </SjUiProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
