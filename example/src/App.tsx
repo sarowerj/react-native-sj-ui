@@ -1,4 +1,4 @@
-import { ViewCard, TextView, SjUiProvider } from 'react-native-sj-ui';
+import { ViewCard, TextView, SjUiProvider, Row } from 'react-native-sj-ui';
 
 export default function App() {
   return (
@@ -20,11 +20,13 @@ export default function App() {
         marginTop={200}
         // style={{ backgroundColor: 'blue' }}
       >
-        <TextView size="h2">John Doe</TextView>
+        <Row gap={30} justifyContent="space-between" alignItems="center">
+          <TextView size="h2">John Doe</TextView>
 
-        <TextView size="body" color="secondary">
-          Mobile Developer
-        </TextView>
+          <TextView size="body" color="secondary">
+            Mobile Developer
+          </TextView>
+        </Row>
       </ViewCard>
     </SjUiProvider>
   );
